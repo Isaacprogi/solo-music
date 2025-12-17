@@ -1,6 +1,6 @@
 # SOLO MUSIC PLAYER
 
-**Live Demo** → https://solo-music-225f.vercel.app/
+**Live Demo** → https://solo-music-so3c-git-main-isaac-anasonyes-projects.vercel.app?_vercel_share=D8O2A1Qu8ZmfRjrDn0MMpLXhTsQsAPPt
 
 <img src="https://github.com/Isaacprogi/solo-music/raw/main/public/logo.png" alt="SOLO MUSIC PLAYER" />
 
