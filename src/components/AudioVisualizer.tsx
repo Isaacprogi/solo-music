@@ -15,7 +15,6 @@ const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ audioRef }) => {
     const audioEl = audioRef.current;
     if (!audioEl || !canvasRef.current) return;
 
-    // Initialize Audio Logic
     if (!audioContextRef.current) {
       audioContextRef.current = new (window.AudioContext ||
         (window as any).webkitAudioContext)();
@@ -50,10 +49,9 @@ const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ audioRef }) => {
       for (let i = 0; i < bufferLength; i++) {
         const barHeight = (dataArray[i] / 255) * canvas.height;
 
-        // Create a modern gradient
         const gradient = ctx.createLinearGradient(0, canvas.height, 0, 0);
-        gradient.addColorStop(0, "purple");
-        gradient.addColorStop(1, "white");
+        gradient.addColorStop(0, "white");
+        gradient.addColorStop(1, "purple");
 
         ctx.fillStyle = gradient;
 

@@ -3,7 +3,7 @@ import { get, set, del } from "idb-keyval";
 import AudioVisualizer from "./components/AudioVisualizer";
 import PlayerControls from "./components/PlayerControls";
 import { Upload, Image as ImageIcon, RefreshCcw, Loader } from "lucide-react";
-import BackgroundImage from "./assets/back.jpg";
+import BackgroundImage from "./assets/back.png";
 import MusicDisplay from "./components/MusicDisplay";
 import Background from "./components/Background";
 
@@ -83,37 +83,35 @@ export default function App() {
     console.log(audioSrc);
   }, [audioSrc]);
 
-  // --- Save Current Time to localStorage ---
+
   const saveCurrentTime = (time: number) => {
     localStorage.setItem("audioCurrentTime", time.toString());
   };
 
-  // --- Clear saved time when audio changes ---
   const clearSavedTime = () => {
     localStorage.removeItem("audioCurrentTime");
   };
 
-  // --- Background Change ---
   const handleBgChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file && file.type.startsWith("image/")) {
-      // Cleanup old URL
+    
       if (currentBgUrl.current) URL.revokeObjectURL(currentBgUrl.current);
 
       const url = URL.createObjectURL(file);
       currentBgUrl.current = url;
       setBgImage(url);
 
-      // Save actual file blob to IndexedDB
+   
       await set("savedBgBlob", file);
     }
   };
 
-  // --- Audio File Change ---
+  
   const handleFile = async (file: File) => {
     if (!file || !file.type.startsWith("audio/")) return;
 
-    // Cleanup old URL
+   
     if (currentAudioUrl.current) URL.revokeObjectURL(currentAudioUrl.current);
 
     const url = URL.createObjectURL(file);
@@ -123,10 +121,10 @@ export default function App() {
     setFileName(file.name);
     setIsPlaying(false);
 
-    // Clear saved time for previous audio
+   
     clearSavedTime();
 
-    // Save to IndexedDB
+
     await set("savedAudioBlob", file);
     await set("savedFileName", file.name);
   };
@@ -318,7 +316,9 @@ export default function App() {
             className="cursor-pointer mb-12 flex flex-col items-center justify-center w-full max-w-64 h-64 border-1 border-purple-500/50 rounded-full bg-black/20 backdrop-blur-md hover:bg-black/40 transition-all"
           >
             <Upload className="w-16 h-16 text-purple-400 mb-4" />
-            <p className="text-sm font-medium">{fileName}</p>
+             <p className="text-xl font-medium text-center">
+                Drop an audio file here or click to upload
+              </p>
             <input
               type="file"
               accept="audio/*"

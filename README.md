@@ -1,73 +1,76 @@
-# React + TypeScript + Vite
+# SOLO MUSIC PLAYER
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Demo** → https://solo-music-225f.vercel.app/
 
-Currently, two official plugins are available:
+<img src="https://github.com/Isaacprogi/solo-music/raw/main/public/logo.png" alt="SOLO MUSIC PLAYER" />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A modern, immersive web-based audio player built with React + TypeScript, featuring real-time audio visualization, persistent playback state, and dynamic background image support. The app is designed for a smooth, distraction-free listening experience with local persistence across sessions.
 
-## React Compiler
+Powered by  **React + Tailwind + Canva + Typescript**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+-🎵 Real-time audio frequency visualization
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+-📊 Smooth bar-based spectrum analyzer
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+-🎨 Dynamic gradient bars (white → purple)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+-🟣 Rounded bars with graceful fallback for older browsers
+
+-⚡ Efficient animation using requestAnimationFrame
+
+-🔊 Auto-resumes AudioContext on play (no silent bugs)
+
+-🧠 Prevents duplicate MediaElementSource connections
+
+-🌙 Modern dark UI with blur & glassmorphism
+
+-📱 Lightweight and responsive-friendly
+
+-💯 Written in TypeScript 
+
+## 🚀 Tech Stack
+
+- React + TypeScript + Vite  
+- Tailwind CSS  
+- Lucide React icons  
+- React-Markdown  
+
+## 🛠 Run Locally
+
+```bash
+git clone https://github.com/Isaacprogi/solo-music.git
+cd visualizer
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Then run:
+```bash
+npm run dev
 ```
+
+Open 
+
+```bash
+http://localhost:5173
+```
+
+
+## Contributing
+Pull requests are very welcome! Ideas include:
+
+- Add country/region projections  
+- Show age pyramid  
+- Display fertility rate trends  
+- Add export to PNG/PDF  
+
+## Support
+Star the repository if you like it!  
+
+Made with ❤️ in 2025  
+Built with React, TypeScript & the Web Audio API
+
